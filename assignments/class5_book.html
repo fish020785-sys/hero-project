@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>책 소개하기</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,7 +13,7 @@
     }
 
     body {
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'IBM Plex Sans KR', sans-serif;
       background-color: #f9f6f1;
       color: #333;
       line-height: 1.9;
@@ -26,33 +26,33 @@
     }
 
     /* HEADER */
-    header {
+    #main-header {
       text-align: center;
       margin-bottom: 48px;
     }
 
-    header h1 {
-      font-size: 2rem;
+    #main-header h1 {
+      font-size: 48px;
       color: #2c3e50;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 0px;
     }
 
-    header h2 {
-      font-size: 1rem;
+    #main-header h2 {
+      font-size: 16px;
       color: #7f8c8d;
       font-weight: 400;
       margin-bottom: 12px;
     }
 
-    header .author {
+    #main-header .author {
       display: block;
-      font-size: 1rem;
+      font-size: 16px;
       color: #7f8c8d;
       margin-bottom: 28px;
     }
 
-    header .cover-link img {
+    #main-header .cover-link img {
       border-radius: 6px;
       box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.18);
     }
@@ -62,8 +62,9 @@
       margin-bottom: 48px;
     }
 
-    section h3 {
-      font-size: 1.15rem;
+    /* 책 소개 */
+    #intro h3 {
+      font-size: 18px;
       color: #2c3e50;
       font-weight: 700;
       border-left: 4px solid #2c3e50;
@@ -71,13 +72,38 @@
       margin-bottom: 16px;
     }
 
-    section p {
-      font-size: 0.97rem;
+    #intro p {
+      font-size: 16px;
+      color: #444;
+      word-break: keep-all;
+    }
+
+    /* 출판사 서평 */
+    #review h3 {
+      font-size: 18px;
+      color: #2c3e50;
+      font-weight: 700;
+      border-left: 4px solid #2c3e50;
+      padding-left: 12px;
+      margin-bottom: 16px;
+    }
+
+    #review p {
+      font-size: 16px;
       color: #444;
       word-break: keep-all;
     }
 
     /* TOC */
+    #toc h3 {
+      font-size: 18px;
+      color: #2c3e50;
+      font-weight: 700;
+      border-left: 4px solid #2c3e50;
+      padding-left: 12px;
+      margin-bottom: 16px;
+    }
+
     #toc ol {
       counter-reset: none;
       padding-left: 0;
@@ -87,53 +113,62 @@
     #toc .part-title {
       font-weight: 700;
       color: #2c3e50;
-      font-size: 1rem;
+      font-size: 16px;
       margin-top: 20px;
       margin-bottom: 6px;
     }
 
     #toc .chapter {
       color: #555;
-      font-size: 0.95rem;
+      font-size: 15px;
       padding-left: 20px;
       margin-bottom: 4px;
     }
 
     /* FOOTER */
-    footer {
+    #main-footer {
       text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
     }
 
     .buy-btn {
-      display: inline-block;
+      display: block;
       background-color: #2c3e50;
       color: white;
-      padding: 10px 20px;
+      padding: 0 20px;
+      height: 56px;
+      line-height: 56px;
       border-radius: 5px;
       text-decoration: none;
-      font-size: 0.95rem;
-      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 16px;
+      font-family: 'IBM Plex Sans KR', sans-serif;
+      text-align: center;
     }
 
     .buy-btn:hover {
       background-color: #1a252f;
+    }
+
+    .footer-credit {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #ddd;
+      font-size: 13px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <header>
+    <header id="main-header">
       <h1>관계를 읽는 시간</h1>
       <h2>나의 관계를 재구성하는 바운더리 심리학</h2>
       <strong class="author">문요한</strong>
-      <a class="cover-link" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=234007632" target="_blank">
+      <a class="cover-link" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=171232279" target="_blank">
         <img
-          src="https://via.placeholder.com/300x400?text=책+표지"
-          width="200"
-          height="267"
+          src="https://image.aladin.co.kr/product/17123/22/cover500/k932534382_1.jpg"
+          width="300"
+          height="426"
           alt="관계를 읽는 시간 표지"
         >
       </a>
@@ -198,10 +233,11 @@
       </ol>
     </section>
 
-    <footer>
-      <a class="buy-btn" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=234007632" target="_blank">
-        알라딘에서 구매하기
+    <footer id="main-footer">
+      <a class="buy-btn" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=171232279" target="_blank">
+        구매하기
       </a>
+      <p class="footer-credit">© 2026102414 엄세리 웹디자인 과제 책 소개 페이지 제작</p>
     </footer>
 
   </div>
