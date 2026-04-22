@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>책 소개하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #F5F0E8;
+      color: #2C2C2C;
+      line-height: 1.8;
+    }
+
+    header {
+      background-color: #3B2F2F;
+      color: #F5F0E8;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    header .subtitle {
+      font-size: 1rem;
+      color: #C8A96E;
+    }
+
+    nav {
+      background-color: #5C4033;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 20px;
+    }
+
+    nav a {
+      color: #F5F0E8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: #C8A96E;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    #book-intro {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      background-color: #FFFFFF;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    #book-cover img {
+      border-radius: 6px;
+      box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
+      display: block;
+    }
+
+    #book-info h2 {
+      font-size: 1.1rem;
+      color: #7B5E3A;
+      margin-bottom: 6px;
+    }
+
+    #book-info .author {
+      font-size: 1.05rem;
+      color: #5C4033;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    #book-info p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 24px;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      background-color: #C8A96E;
+      color: #3B2F2F;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color 0.2s;
+    }
+
+    .buy-btn:hover {
+      background-color: #B08D4E;
+    }
+
+    #toc {
+      background-color: #FFFFFF;
+      border-radius: 12px;
+      padding: 36px 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    #toc h2 {
+      font-size: 1.3rem;
+      color: #3B2F2F;
+      border-bottom: 2px solid #C8A96E;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    #toc ol {
+      padding-left: 24px;
+    }
+
+    #toc ol li {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 10px;
+      padding-left: 6px;
+    }
+
+    #toc ol li span {
+      color: #7B5E3A;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+
+    footer {
+      background-color: #3B2F2F;
+      color: #C8A96E;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 620px) {
+      #book-intro {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📖 책 소개하기</h1>
+    <p class="subtitle">오늘의 추천 도서</p>
+  </header>
+
+  <nav>
+    <a href="#book-intro">책 소개</a>
+    <a href="#toc">목차</a>
+    <a href="#buy">구매하기</a>
+  </nav>
+
+  <main>
+
+    <section id="book-intro">
+      <div id="book-cover">
+        <img
+          src="https://image.yes24.com/goods/105014247/XL"
+          width="180"
+          height="260"
+          alt="어린왕자 책 표지"
+        >
+      </div>
+
+      <div id="book-info">
+        <h2>작가</h2>
+        <strong class="author">앙투안 드 생텍쥐페리 (Antoine de Saint-Exupéry)</strong>
+
+        <p>
+          『어린왕자』는 1943년 프랑스 작가 생텍쥐페리가 쓴 세계적인 명작입니다.
+          사막에 불시착한 비행사 앞에 나타난 어린왕자와의 만남을 통해,
+          어른들이 잃어버린 순수함과 사랑의 본질을 아름답고 서정적인 문체로 담아냈습니다.
+          "가장 중요한 것은 눈에 보이지 않아"라는 여우의 말은
+          수십 년이 지난 지금도 많은 독자들의 마음속에 남아 있습니다.
+        </p>
+
+        <a class="buy-btn" id="buy" href="https://www.yes24.com/Product/Goods/105014247" target="_blank">
+          YES24에서 구매하기 →
+        </a>
+      </div>
+    </section>
+
+    <section id="toc">
+      <h2>목차</h2>
+      <ol>
+        <li><span>1장</span> 사막에 불시착한 비행사</li>
+        <li><span>2장</span> 어린왕자와의 첫 만남</li>
+        <li><span>3장</span> 소행성 B612와 장미</li>
+        <li><span>4장</span> 여러 별을 여행하다</li>
+        <li><span>5장</span> 지구에 도착하다</li>
+        <li><span>6장</span> 여우와 길들임의 의미</li>
+        <li><span>7장</span> 뱀과 이별, 그리고 사막의 우물</li>
+        <li><span>8장</span> 어린왕자의 별로 돌아가는 길</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>HTML &amp; CSS 실습 과제 · class5_book.html</p>
+  </footer>
+
+</body>
+</html>
