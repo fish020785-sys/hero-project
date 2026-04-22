@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>책 소개하기</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,220 +13,197 @@
     }
 
     body {
-      font-family: 'Georgia', serif;
-      background-color: #F5F0E8;
-      color: #2C2C2C;
-      line-height: 1.8;
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f9f6f1;
+      color: #333;
+      line-height: 1.9;
     }
 
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    /* HEADER */
     header {
-      background-color: #3B2F2F;
-      color: #F5F0E8;
-      padding: 40px 20px;
       text-align: center;
+      margin-bottom: 48px;
     }
 
     header h1 {
-      font-size: 2.4rem;
-      letter-spacing: 2px;
+      font-size: 2rem;
+      color: #2c3e50;
+      font-weight: 700;
       margin-bottom: 8px;
     }
 
-    header .subtitle {
+    header h2 {
       font-size: 1rem;
-      color: #C8A96E;
+      color: #7f8c8d;
+      font-weight: 400;
+      margin-bottom: 12px;
     }
 
-    nav {
-      background-color: #5C4033;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 12px 20px;
-    }
-
-    nav a {
-      color: #F5F0E8;
-      text-decoration: none;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-    }
-
-    nav a:hover {
-      color: #C8A96E;
-    }
-
-    main {
-      max-width: 860px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    #book-intro {
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-      background-color: #FFFFFF;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
-    }
-
-    #book-cover img {
-      border-radius: 6px;
-      box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
+    header .author {
       display: block;
+      font-size: 1rem;
+      color: #7f8c8d;
+      margin-bottom: 28px;
     }
 
-    #book-info h2 {
-      font-size: 1.1rem;
-      color: #7B5E3A;
+    header .cover-link img {
+      border-radius: 6px;
+      box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    /* SECTIONS COMMON */
+    section {
+      margin-bottom: 48px;
+    }
+
+    section h3 {
+      font-size: 1.15rem;
+      color: #2c3e50;
+      font-weight: 700;
+      border-left: 4px solid #2c3e50;
+      padding-left: 12px;
+      margin-bottom: 16px;
+    }
+
+    section p {
+      font-size: 0.97rem;
+      color: #444;
+      word-break: keep-all;
+    }
+
+    /* TOC */
+    #toc ol {
+      counter-reset: none;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    #toc .part-title {
+      font-weight: 700;
+      color: #2c3e50;
+      font-size: 1rem;
+      margin-top: 20px;
       margin-bottom: 6px;
     }
 
-    #book-info .author {
-      font-size: 1.05rem;
-      color: #5C4033;
-      font-weight: bold;
-      margin-bottom: 20px;
-      display: block;
+    #toc .chapter {
+      color: #555;
+      font-size: 0.95rem;
+      padding-left: 20px;
+      margin-bottom: 4px;
     }
 
-    #book-info p {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 24px;
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
     }
 
     .buy-btn {
       display: inline-block;
-      background-color: #C8A96E;
-      color: #3B2F2F;
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
       text-decoration: none;
-      padding: 10px 24px;
-      border-radius: 6px;
-      font-weight: bold;
       font-size: 0.95rem;
-      transition: background-color 0.2s;
+      font-family: 'Noto Sans KR', sans-serif;
     }
 
     .buy-btn:hover {
-      background-color: #B08D4E;
-    }
-
-    #toc {
-      background-color: #FFFFFF;
-      border-radius: 12px;
-      padding: 36px 40px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
-    }
-
-    #toc h2 {
-      font-size: 1.3rem;
-      color: #3B2F2F;
-      border-bottom: 2px solid #C8A96E;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-
-    #toc ol {
-      padding-left: 24px;
-    }
-
-    #toc ol li {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 10px;
-      padding-left: 6px;
-    }
-
-    #toc ol li span {
-      color: #7B5E3A;
-      font-weight: bold;
-      margin-right: 6px;
-    }
-
-    footer {
-      background-color: #3B2F2F;
-      color: #C8A96E;
-      text-align: center;
-      padding: 24px 20px;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-    }
-
-    @media (max-width: 620px) {
-      #book-intro {
-        flex-direction: column;
-        align-items: center;
-      }
+      background-color: #1a252f;
     }
   </style>
 </head>
 <body>
+  <div class="container">
 
-  <header>
-    <h1>📖 책 소개하기</h1>
-    <p class="subtitle">오늘의 추천 도서</p>
-  </header>
-
-  <nav>
-    <a href="#book-intro">책 소개</a>
-    <a href="#toc">목차</a>
-    <a href="#buy">구매하기</a>
-  </nav>
-
-  <main>
-
-    <section id="book-intro">
-      <div id="book-cover">
+    <header>
+      <h1>관계를 읽는 시간</h1>
+      <h2>나의 관계를 재구성하는 바운더리 심리학</h2>
+      <strong class="author">문요한</strong>
+      <a class="cover-link" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=234007632" target="_blank">
         <img
-          src="https://image.yes24.com/goods/105014247/XL"
-          width="180"
-          height="260"
-          alt="어린왕자 책 표지"
+          src="https://via.placeholder.com/300x400?text=책+표지"
+          width="200"
+          height="267"
+          alt="관계를 읽는 시간 표지"
         >
-      </div>
+      </a>
+    </header>
 
-      <div id="book-info">
-        <h2>작가</h2>
-        <strong class="author">앙투안 드 생텍쥐페리 (Antoine de Saint-Exupéry)</strong>
+    <section id="intro">
+      <h3>책 소개</h3>
+      <p>
+        어른인 당신의 관계가 계속 힘들다면 '관계의 틀'부터 살펴보라.
+        사람들은 늘 인간관계 때문에 힘들어하면서 '내 맘 같지 않다'고 한탄한다.
+        정신과 의사 문요한은 상대와 거리가 가까워지면 전혀 의도하지 않았어도
+        상처를 주고받을 수 있는 것이 인간관계의 본질임을 직시하라고 권한다.
+        바운더리란 인간관계에서 '나'와 '나 아닌 것'을 구분해주는 자아의 경계이자
+        관계 교류가 일어나는 통로다. 왜곡된 바운더리는 필연적으로 역기능적 관계를 낳는다.
+        순응형, 돌봄형, 지배형, 방어형이라는 4가지 역기능적 관계틀을 이해하고,
+        건강한 바운더리를 다시 세우는 여정을 이 책에서 안내한다.
+      </p>
+    </section>
 
-        <p>
-          『어린왕자』는 1943년 프랑스 작가 생텍쥐페리가 쓴 세계적인 명작입니다.
-          사막에 불시착한 비행사 앞에 나타난 어린왕자와의 만남을 통해,
-          어른들이 잃어버린 순수함과 사랑의 본질을 아름답고 서정적인 문체로 담아냈습니다.
-          "가장 중요한 것은 눈에 보이지 않아"라는 여우의 말은
-          수십 년이 지난 지금도 많은 독자들의 마음속에 남아 있습니다.
-        </p>
-
-        <a class="buy-btn" id="buy" href="https://www.yes24.com/Product/Goods/105014247" target="_blank">
-          YES24에서 구매하기 →
-        </a>
-      </div>
+    <section id="review">
+      <h3>출판사 서평</h3>
+      <p>
+        바운더리 심리학은 '지금 모습으로 충분하다'는 위로의 심리학이 아니라
+        당신의 관계를 재구성하는 '변화의 심리학'이다.
+        관계에서 번번이 겪는 어려움을 해결하기 위해 나의 관계틀을 재구성한다는 것은
+        관계에서 '자기결정권'을 회복하는 것이다.
+        바운더리를 제대로 세운다는 것은 이기적인 것도, 폐쇄적인 것도 아니다.
+        바운더리가 건강하면 관계는 내 편이 된다.
+      </p>
     </section>
 
     <section id="toc">
-      <h2>목차</h2>
+      <h3>목차</h3>
       <ol>
-        <li><span>1장</span> 사막에 불시착한 비행사</li>
-        <li><span>2장</span> 어린왕자와의 첫 만남</li>
-        <li><span>3장</span> 소행성 B612와 장미</li>
-        <li><span>4장</span> 여러 별을 여행하다</li>
-        <li><span>5장</span> 지구에 도착하다</li>
-        <li><span>6장</span> 여우와 길들임의 의미</li>
-        <li><span>7장</span> 뱀과 이별, 그리고 사막의 우물</li>
-        <li><span>8장</span> 어린왕자의 별로 돌아가는 길</li>
+        <li class="part-title">1부. 문제는 바운더리다</li>
+        <li class="chapter">1장. 착해서 힘든 게 아니야</li>
+        <li class="chapter">2장. 왜 상처는 가까운 사람이 더 줄까?</li>
+        <li class="chapter">3장. 조종하는 자와 조종당하는 자</li>
+        <li class="chapter">4장. 그런데 바운더리가 뭔가요?</li>
+        <li class="chapter">5장. 바운더리는 어떻게 만들어지나요?</li>
+
+        <li class="part-title">2부. 일그러진 바운더리: 순응형·돌봄형·방어형·지배형</li>
+        <li class="chapter">6장. 바운더리에 문제가 생기면</li>
+        <li class="chapter">7장. 누군가와 불편해지는 건 너무 싫어: 순응형</li>
+        <li class="chapter">8장. 네가 기뻐야 나도 기뻐: 돌봄형</li>
+        <li class="chapter">9장. 나한테 신경 좀 쓰지 마: 방어형</li>
+        <li class="chapter">10장. 자기밖에 모르는 사람들: 지배형</li>
+
+        <li class="part-title">3부. 행복한 관계의 조건</li>
+        <li class="chapter">11장. 관계조절력</li>
+        <li class="chapter">12장. 상호존중감</li>
+        <li class="chapter">13장. 마음을 헤아리는 마음</li>
+        <li class="chapter">14장. 갈등회복력</li>
+        <li class="chapter">15장. 솔직한 자기표현</li>
+
+        <li class="part-title">4부. 바운더리의 재구성</li>
+        <li class="chapter">16장. 관계의 역사 이해하기</li>
+        <li class="chapter">17장. 애착손상 치유 연습</li>
+        <li class="chapter">18장. 바운더리를 세우는 자기표현 훈련 P.A.C.E.</li>
+        <li class="chapter">19장. '아니오' 연습</li>
+        <li class="chapter">20장. '자기 세계' 만들기</li>
       </ol>
     </section>
 
-  </main>
+    <footer>
+      <a class="buy-btn" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=234007632" target="_blank">
+        알라딘에서 구매하기
+      </a>
+    </footer>
 
-  <footer>
-    <p>HTML &amp; CSS 실습 과제 · class5_book.html</p>
-  </footer>
-
+  </div>
 </body>
 </html>
